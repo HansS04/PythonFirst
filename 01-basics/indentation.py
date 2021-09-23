@@ -35,12 +35,13 @@ def greet(name):
     This function greets to the person
     passed in as a parameter
     """
-    print("Ahoj, " + name + "!")
+    print("Dobry den, " + name + "!")
 
 # Vypíše docstring spojený s funkcí greet
 print(greet.__doc__)
 # Vyvolá funkci greet s parametrem 'Hilda'
-greet('Hilda')
+greet('Pane Uciteli')
+print()
 
 """
 Cvičení 2:
@@ -49,4 +50,21 @@ Vytvořte libovolně pojmenovanou vlastní funkci s minimálně jedním parametr
 aspoň jednu podmínku if a funkci print(). Dodržte správné odsazování kódu a opatřete funkci stručnou dokumentací.
 Do konzole vypište nejprve docstring vaší funkce a potom zavolejte funkci samotnou.   
 """
+zaci = [' Hadamcik'' David'' Tom'' Pavel'' Lukas'' Tom'' Stom'' Hans'' Jaros'' Bernard'' Martin'' Adam'' Vasek'' Andrea'' Vojta']
+
+z = len(zaci)
+
+def pozdrav(tridni):
+
+    print("Ahoj, " + tridni + "!")
+
+
+pozdrav("IT3 pgr")
+for j in range(0, z):
+
+    print("%s ,"%zaci[j],end=" Toto je nase trida")
+print("\nFunkci (for) jsem pouzil v ukolu s vypisem velikonoc")
+
+
+
 
