@@ -48,6 +48,6 @@ def send_message():
     #global message
     message = "Lokální proměnná"
 
-
+print()
 send_message()
 print(message)
