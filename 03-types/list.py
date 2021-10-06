@@ -282,7 +282,35 @@ print(f'\tSbalení seznamů do proměnné values: {values}\n')
 # aby vznikl seznam n-tic (list of tuples) v podobě (cislo, znak).
 # Snažte se vždy o co nejzhuštěnější kód - ideálně na 1 řádku (+ další řádek s kontrolním výpisem proměnné)
 # import knihovny pro generování náhodných čísel
-from random import randint
+
+import random
+import string
+nahodnacisla = []
+ascii = []
+
+while len(nahodnacisla) < 50:
+    hundereds = random.randint(1,2000)
+    if (hundereds >= 1 and hundereds <= 2000):
+        if (hundereds % 200 == 0):
+            nahodnacisla.append(hundereds)
+
+
+del nahodnacisla[:3]
+del nahodnacisla[-3:]
+
+while len(ascii)<50:
+    ascii.append(random.choice(string.ascii_uppercase))
+j = 0
+delka = len(ascii) - len(nahodnacisla)
+
+del ascii[:delka]
+while j < len(ascii):
+    print(j)
+    print(ascii[j])
+    print(nahodnacisla[j])
+    j+=1
+
+
 
 print(f'\n*************************************\nCvičení 2\n*************************************')
 

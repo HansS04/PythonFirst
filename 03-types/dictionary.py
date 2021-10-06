@@ -5,8 +5,8 @@ klíč (angl. key) a hodnotu (angl. value).
 Každému klíči je přiřazena jedna hodnota.
 '''
 
-# Collection which is unordered, changeable and indexed.
-# In Python dictionaries are written with curly brackets, and they have keys and values.
+# Sbírka, která je neuspořádaná, měnitelná a indexovaná.
+# V Pythonu jsou slovníky psány se složenými závorkami a mají klíče a hodnoty.
 car = {
   'brand': 'Ford',
   'model': 'Mustang',
@@ -83,6 +83,39 @@ print(f'Nested dictionary myfamily: {myfamily}')
 # b) Pomocí vhodných metod přidejte do slovníku nový prvek a nějaký starý naopak odstraňte
 # c) Proveďte výpis obsahu slovníku tak, aby i v konzoli vytvořil hezky naformátovanou tabulku i s mezerami
 # viz níže uvedený vzor.
+
+Menu = {
+  'snidane' : {
+    'nazev' : 'Míchaná vejce s pečivem',
+    'gramaz' : 100
+  },
+  'hl.jidlo' : {
+    'nazev' : 'Zapečená brokolice s vejcem',
+    'gramaz' : 170
+  },
+  'polevka': {
+    'nazev': 'Pórkový krém',
+    'gramaz': 170
+  },
+  'vecere' : {
+    'nazev' : 'Porkovy krem s pečivem',
+    'gramaz' : 170
+  }
+}
+print("Slovník Menu")
+print("---------------------------------------------------------------------------")
+print("Cast jídelníčku                          nazev                       gramaz")
+print("---------------------------------------------------------------------------")
+i = 0;
+Menu["hodnoceni"] = 10;
+for key, value in Menu.items():
+  i+= 1;
+
+  print("%10s %40s %20d g"%(key ,value["nazev"], value["gramaz"]))
+
+print("---------------------------------------------------------------------------")
+print("Počet záznamů: %d"%i)
+
 '''
 Slovník myfamily
 ---------------------------------------------
