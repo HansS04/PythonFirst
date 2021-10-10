@@ -285,30 +285,6 @@ print(f'\tSbalení seznamů do proměnné values: {values}\n')
 
 import random
 import string
-nahodnacisla = []
-ascii = []
-
-while len(nahodnacisla) < 50:
-    hundereds = random.randint(1,2000)
-    if (hundereds >= 1 and hundereds <= 2000):
-        if (hundereds % 200 == 0):
-            nahodnacisla.append(hundereds)
-
-
-del nahodnacisla[:3]
-del nahodnacisla[-3:]
-
-while len(ascii)<50:
-    ascii.append(random.choice(string.ascii_uppercase))
-j = 0
-delka = len(ascii) - len(nahodnacisla)
-
-del ascii[:delka]
-while j < len(ascii):
-    print(j)
-    print(ascii[j])
-    print(nahodnacisla[j])
-    j+=1
 
 
 
@@ -325,4 +301,34 @@ print(f'\n*************************************\nCvičení 2\n******************
 # Kromě jména, věku a pohlaví v něm budou vypsána i čísla indexů (jako 1. sloupec). Oddělovačem bude středník.
 # Záznamy budou seřazeny podle věku (sestupně).
 
+# a
+hundreds = list(range(1,2001))
+hundreds = [x for x in range(200,2001,200)]
+print(hundreds)
+# b
+import random
+ascii = [x for i in range(50) for x in random.choice(string.ascii_uppercase)]
+print(ascii)
+# c
+hundreds = hundreds[3:-3]
+print(hundreds)
+# d
+unique = [x for x in ascii if (ascii.count(x)==1)]
+print(unique)
+# e
+zipped = zip(hundreds, unique)
+print(list(zipped))
 print(f'\n*************************************\nCvičení 3\n*************************************')
+# b
+women = list(filter(lambda person: person[2] == "žena", persons))
+women = [person for person in persons if person[2]=="žena"]
+for person in women:
+    print(f'{person[0]}\n' + "-" * len(person[0]))
+ipeople = list(filter(lambda person: person[0].count('i') > 0 or person[0].count('I') > 0, persons))
+ipeople = [person for person in persons if person[0].count('i') > 0 or person[0].count('I') > 0]
+ipeople.sort(key=lambda  item: item[1], reverse=True)
+print(ipeople)
+ipeopleCSV = 'index;jmeno;vek;pohlavi'
+for i in range(len(ipeople)):
+    ipeopleCSV+= f'{i};' + ';'.join(map(str, ipeople[i])) + '\n'
+print(ipeopleCSV)
